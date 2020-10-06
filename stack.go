@@ -1,6 +1,7 @@
 package mystack
 
-type Stack []int
+// Stack ...
+type Stack []interface{}
 
 // Size return size of the stack
 func (s Stack) Size() int {
@@ -13,12 +14,12 @@ func (s Stack) IsEmpty() bool {
 }
 
 // Push ...
-func (s *Stack) Push(val int) {
+func (s *Stack) Push(val interface{}) {
 	*s = append(*s, val)
 }
 
 // Pop return false if stack is empty
-func (s *Stack) Pop() (int, bool) {
+func (s *Stack) Pop() (interface{}, bool) {
 	if (*s).IsEmpty() == true {
 		return 0, false
 	}
